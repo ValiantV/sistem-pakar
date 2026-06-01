@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --primary: #7DD3FC;       /* sky-300 */
+  --primary-dark: #38BDF8;  /* sky-400 */
+  --accent: #10B981;        /* emerald-500 */
+  --accent-light: #D1FAE5;  /* emerald-100 */
+  --bg: #ffffff;
+  --bg-gray: #F9FAFB;
+  --text-primary: #171717;  /* neutral-900 */
+  --text-secondary: #6B7280; /* gray-500 */
+  --text-muted: #71717A;    /* zinc-500 */
+  --border: #F3F4F6;        /* gray-100 */
+  --border-light: #E2E8F0;  /* slate-200 */
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  background-color: #F8FAFC;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile-first container: centered card like a mobile app */
+.app-container {
+  min-height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+  background: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #7DD3FC;
+  border-radius: 4px;
+}
+
+/* Checkbox custom styles */
+.symptom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #CBD5E1;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.symptom-checkbox:checked {
+  background: #7DD3FC;
+  border-color: #7DD3FC;
+}
+
+.symptom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+/* Input base styles */
+.input-field {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #171717;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #7DD3FC;
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.2);
+}
+
+.input-field::placeholder {
+  color: #9CA3AF;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9, #f3e5f5);
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Card hover animation */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Button press animation */
+.btn-press {
+  transition: transform 0.1s ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Progress bar animation */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: var(--progress); }
+}
+
+.progress-bar {
+  animation: progress-fill 1s ease forwards;
+}
+
+/* Pulse dot for active state */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
