@@ -135,7 +135,7 @@ export const diseases: Disease[] = [
     ],
     selfCare:
       'Gunakan masker dan hindari kontak dekat\nIstirahat cukup dan konsumsi makanan bergizi\nSegera periksa ke puskesmas untuk tes dahak',
-    image: '/assets/Image (1).png',
+    image: '/assets/Image.png',
     icon: 'lungs',
   },
   {
@@ -153,7 +153,7 @@ export const diseases: Disease[] = [
     ],
     selfCare:
       'Istirahat cukup, minum air putih banyak\nGunakan kelambu atau obat nyamuk\nSegera periksa darah jika demam lebih dari 3 hari',
-    image: '/assets/Image (2).png',
+    image: '/assets/Image (1).png',
     icon: 'mosquito',
   },
   {
@@ -171,7 +171,7 @@ export const diseases: Disease[] = [
     ],
     selfCare:
       'Istirahat, Minum air hangat\nGunakan masker\nHindari asap rokok',
-    image: '/assets/Image (3).png',
+    image: '/assets/Image (2).png',
     icon: 'throat',
   },
   {
@@ -188,7 +188,7 @@ export const diseases: Disease[] = [
     ],
     selfCare:
       'Makan teratur dalam porsi kecil\nHindari makanan pedas dan asam\nKurangi kopi dan minuman bersoda\nKelola stres',
-    image: '/assets/Image (4).png',
+    image: '/assets/Image (3).png',
     icon: 'stomach',
   },
   {
@@ -201,7 +201,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['Sakit kepala', 'Pusing', 'Mudah lelah'],
     selfCare:
       'Kurangi garam dan makanan asin\nIstirahat cukup\nKelola stres\nCek tekanan darah secara rutin',
-    image: '/assets/Image (5).png',
+    image: '/assets/Image (4).png',
     icon: 'heart',
   },
   {
@@ -214,7 +214,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['BAB cair lebih dari 3 kali sehari', 'Mual dan muntah', 'Perut mulas', 'Lemas'],
     selfCare:
       'Minum oralit atau air gula-garam\nTetap makan dalam porsi kecil\nJaga kebersihan makanan dan tangan',
-    image: '/assets/Image (6).png',
+    image: '/assets/Image (5).png',
     icon: 'diarrhea',
   },
   {
@@ -227,7 +227,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['Demam', 'Batuk dan pilek', 'Sakit kepala', 'Badan pegal'],
     selfCare:
       'Istirahat yang cukup\nMinum air putih lebih banyak\nGunakan masker\nKonsumsi makanan bergizi',
-    image: '/assets/Image (7).png',
+    image: '/assets/Image (6).png',
     icon: 'virus',
   },
   {
@@ -240,7 +240,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['Nyeri atau pegal otot', 'Otot terasa kaku', 'Nyeri saat bergerak'],
     selfCare:
       'Istirahatkan otot yang nyeri\nKompres hangat\nLakukan peregangan ringan\nMinum air putih cukup',
-    image: '/assets/Image (8).png',
+    image: '/assets/Image (7).png',
     icon: 'muscle',
   },
   {
@@ -253,7 +253,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['Sering haus dan lapar', 'Sering buang air kecil', 'Luka sulit sembuh'],
     selfCare:
       'Batasi konsumsi gula dan karbohidrat\nOlahraga teratur\nPeriksa gula darah secara rutin\nJaga berat badan ideal',
-    image: '/assets/Image (9).png',
+    image: '/assets/Image (8).png',
     icon: 'diabetes',
   },
   {
@@ -266,7 +266,7 @@ export const diseases: Disease[] = [
     commonSymptoms: ['Kulit terasa gatal', 'Kulit merah atau ruam', 'Kulit kering dan bersisik'],
     selfCare:
       'Hindari sabun atau bahan kimia keras\nGunakan pelembab kulit\nJangan menggaruk kulit yang gatal\nKonsultasi dokter jika makin parah',
-    image: '/assets/Image.png',
+    image: '/assets/Image (9).png',
     icon: 'skin',
   },
 ];

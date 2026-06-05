@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Eye, EyeOff } from 'lucide-react';
+import { EyeOff, Eye } from 'lucide-react';
 import { useAppStore } from '@/store/useAppStore';
 
 export default function RegisterPage() {
@@ -24,7 +24,6 @@ export default function RegisterPage() {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
     if (!name || !email || !password || !confirmPassword) {
       setError('Semua field wajib diisi.');
       return;
@@ -37,7 +36,6 @@ export default function RegisterPage() {
       setError('Konfirmasi password tidak cocok.');
       return;
     }
-
     setLoading(true);
     await new Promise((r) => setTimeout(r, 400));
     const result = register({ name, email, password });
@@ -51,10 +49,10 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col px-6 pt-8 pb-8 bg-white">
+    <div className="min-h-screen flex flex-col bg-white px-6 pt-8 pb-10">
       {/* Hero illustration */}
       <div className="flex justify-center mb-5 fade-in">
-        <div className="relative w-56 h-56">
+        <div className="relative w-60 h-48">
           <Image
             src="/assets/undraw_online-profile_v9c1 (1) 1.png"
             alt="Register illustration"
@@ -65,20 +63,20 @@ export default function RegisterPage() {
       </div>
 
       {/* Headline */}
-      <div className="text-center mb-6 fade-in" style={{ animationDelay: '0.1s' }}>
-        <h1 className="text-2xl font-bold text-zinc-900 font-['Poppins']">
+      <div className="text-center mb-8 fade-in" style={{ animationDelay: '0.05s' }}>
+        <h1 className="text-2xl font-bold text-neutral-900 font-['Poppins']">
           Registrasi Akun
         </h1>
-        <p className="text-zinc-500 text-base font-medium mt-1 font-['Poppins']">
+        <p className="text-zinc-500 text-base font-normal mt-1 font-['Poppins']">
           Silakan lengkapi data berikut
         </p>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleRegister} className="flex flex-col gap-4 fade-in" style={{ animationDelay: '0.15s' }}>
+      <form onSubmit={handleRegister} className="flex flex-col gap-5 fade-in" style={{ animationDelay: '0.1s' }}>
         {/* Nama */}
-        <div>
-          <label className="text-zinc-500 text-xs font-medium font-['Poppins'] mb-1 block">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-neutral-900 text-sm font-normal font-['Poppins']">
             Nama
           </label>
           <input
@@ -87,14 +85,14 @@ export default function RegisterPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Masukkan Nama Anda"
-            className="input-field"
+            className="w-full h-[52px] px-4 bg-white border border-slate-200 rounded-xl text-sm font-normal font-['Poppins'] text-zinc-500 placeholder:text-zinc-400 outline-none focus:border-sky-300 transition-colors"
             autoComplete="name"
           />
         </div>
 
         {/* Email */}
-        <div>
-          <label className="text-zinc-500 text-xs font-medium font-['Poppins'] mb-1 block">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-neutral-900 text-sm font-normal font-['Poppins']">
             Email
           </label>
           <input
@@ -103,14 +101,14 @@ export default function RegisterPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Masukkan Email Anda"
-            className="input-field"
+            className="w-full h-[52px] px-4 bg-white border border-slate-200 rounded-xl text-sm font-normal font-['Poppins'] text-zinc-500 placeholder:text-zinc-400 outline-none focus:border-sky-300 transition-colors"
             autoComplete="email"
           />
         </div>
 
         {/* Password */}
-        <div>
-          <label className="text-zinc-500 text-xs font-medium font-['Poppins'] mb-1 block">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-neutral-900 text-sm font-normal font-['Poppins']">
             Password
           </label>
           <div className="relative">
@@ -120,22 +118,18 @@ export default function RegisterPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Masukkan Password Anda"
-              className="input-field pr-12"
+              className="w-full h-[52px] px-4 pr-12 bg-white border border-slate-200 rounded-xl text-sm font-normal font-['Poppins'] text-zinc-500 placeholder:text-zinc-400 outline-none focus:border-sky-300 transition-colors"
               autoComplete="new-password"
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+              {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
             </button>
           </div>
         </div>
 
         {/* Confirm Password */}
-        <div>
-          <label className="text-zinc-500 text-xs font-medium font-['Poppins'] mb-1 block">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-neutral-900 text-sm font-normal font-['Poppins']">
             Konfirmasi Password
           </label>
           <div className="relative">
@@ -145,22 +139,18 @@ export default function RegisterPage() {
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Masukkan Password Anda"
-              className="input-field pr-12"
+              className="w-full h-[52px] px-4 pr-12 bg-white border border-slate-200 rounded-xl text-sm font-normal font-['Poppins'] text-zinc-500 placeholder:text-zinc-400 outline-none focus:border-sky-300 transition-colors"
               autoComplete="new-password"
             />
-            <button
-              type="button"
-              onClick={() => setShowConfirm(!showConfirm)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              {showConfirm ? <EyeOff size={16} /> : <Eye size={16} />}
+            <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
+              {showConfirm ? <Eye size={18} /> : <EyeOff size={18} />}
             </button>
           </div>
         </div>
 
         {/* Error */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-2xl px-4 py-3 text-red-600 text-sm font-['Poppins']">
+          <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-red-600 text-sm font-['Poppins']">
             {error}
           </div>
         )}
@@ -170,20 +160,20 @@ export default function RegisterPage() {
           id="btn-register"
           type="submit"
           disabled={loading}
-          className="btn-press w-full h-12 bg-sky-300 hover:bg-sky-400 text-white font-medium text-sm font-['Poppins'] rounded-[10px] shadow-[0px_0px_0px_1px_rgba(109,189,255,1.00)] transition-all disabled:opacity-60 mt-2"
+          className="btn-press w-full h-14 bg-sky-300 hover:bg-sky-400 text-white font-semibold text-base font-['Poppins'] rounded-2xl transition-all disabled:opacity-60 mt-1"
         >
           {loading ? 'Mendaftar...' : 'Daftar'}
         </button>
 
         {/* Login link */}
-        <div className="flex justify-center items-center gap-1.5">
-          <span className="text-zinc-500 text-xs font-medium font-['Poppins']">
+        <div className="flex justify-center items-center gap-1">
+          <span className="text-neutral-900 text-sm font-normal font-['Poppins']">
             Sudah mempunyai akun?
           </span>
           <Link
             href="/login"
             id="link-to-login"
-            className="text-sky-300 text-xs font-semibold font-['Poppins'] hover:text-sky-400 transition-colors"
+            className="text-sky-400 text-sm font-normal font-['Poppins'] hover:text-sky-500 transition-colors"
           >
             Login
           </Link>

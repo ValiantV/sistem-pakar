@@ -22,20 +22,46 @@
 
 body {
   font-family: 'Poppins', 'Inter', sans-serif;
-  background-color: #F8FAFC;
+  /* Slate-100 desktop background — gives depth around the mobile card */
+  background-color: #F1F5F9;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-/* Mobile-first container: centered card like a mobile app */
+/* Mobile-first container: centered white card on desktop */
 .app-container {
   min-height: 100vh;
+  width: 100%;
   max-width: 430px;
   margin: 0 auto;
   background: white;
   position: relative;
   overflow-x: hidden;
+  /* Subtle shadow on desktop to give the "phone frame" feel */
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Desktop breakpoint: expand beyond 430px mobile card */
+@media (min-width: 768px) {
+  .app-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  body {
+    background-color: #F8FAFC;
+  }
+}
+
+/* Hide number input spinners (stepper arrows) on all browsers */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 /* Smooth scrolling */
